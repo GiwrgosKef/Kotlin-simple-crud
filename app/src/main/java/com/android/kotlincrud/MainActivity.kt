@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
+import com.android.kotlincrud.models.Note
 import com.android.kotlincrud.utils.LocaleHelper
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_main.*

@@ -1,6 +1,6 @@
 package com.android.kotlincrud.api
 
-import com.android.kotlincrud.Note
+import com.android.kotlincrud.models.Note
 import io.reactivex.Completable
 import io.reactivex.Observable
 import retrofit2.Retrofit
