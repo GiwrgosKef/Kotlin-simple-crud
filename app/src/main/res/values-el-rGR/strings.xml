@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Σημειωματάριο</string>
+    <string name="add_note">Προσθήκη νέας σημείωσης</string>
+    <string name="update_note">Επεξεργασία σημείωσης</string>
+    <string name="cancel">Άκυρο</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="delete_conf">Επιβεβαίωση διαγραφής</string>
+    <string name="update">Αλλαγή</string>
+    <string name="greek">Ελληνικά</string>
+    <string name="enter_name">Προσθέστε όνομα</string>
+    <string name="save">Αποθήκευση</string>
+    <string name="search">Αναζήτηση</string>
+    <string name="search_by_id">Αναζητήστε με βάση το id</string>
+</resources>
