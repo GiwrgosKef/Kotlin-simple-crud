@@ -12,7 +12,7 @@ Ready to go!!
 ---------------
 USE
 ---------------
-Run on an emulator and you can Create Read Update Delete(CRUD) notes.
+Run an emulator and you can Create Read Update Delete(CRUD) notes.
 You can switch between English and Greek languages from the menu(you can do the same for other languages too).
 This app is responsive to all devices that's why no extra layout folders needed.
 
