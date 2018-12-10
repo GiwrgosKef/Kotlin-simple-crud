@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="design_fab_image_size" tools:override="true">40dp</dimen>
+    <dimen name="default_padding">5dp</dimen>
+    <dimen name="default_height">35dp</dimen>
+
+
+    <dimen name="default_font_size">16sp</dimen>
 </resources>
