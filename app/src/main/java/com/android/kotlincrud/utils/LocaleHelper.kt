@@ -7,13 +7,9 @@ import android.preference.PreferenceManager
 
 import java.util.Locale
 
-/**
- * Created by abdalla on 10/2/17.
- */
-
 object LocaleHelper {
 
-    private val SELECTED_LANGUAGE = "Locale.Helper.Selected.Language"
+    private const val SELECTED_LANGUAGE = "Locale.Helper.Selected.Language"
 
     fun onAttach(context: Context): Context {
         val lang = getPersistedData(context, Locale.getDefault().language)

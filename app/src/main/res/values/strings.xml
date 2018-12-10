@@ -10,13 +10,9 @@
     <string name="english" translatable="false">English</string>
     <string name="greek">Greek</string>
     <string name="search_by_id">Search note by id</string>
-
-
-    <string-array name="language_option">
-        <item>English</item>
-        <item>Indonesian</item>
-        <item>Spanish</item>
-    </string-array>
     <string name="delete_conf">Are you sure you want to delete this note?</string>
     <string name="search">Search</string>
+    <string name="id" translatable="false">id</string>
+    <string name="id_not_found">Note with this id not found</string>
+    <string name="refreshed">Refreshed</string>
 </resources>

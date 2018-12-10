@@ -12,4 +12,6 @@
     <string name="save">Αποθήκευση</string>
     <string name="search">Αναζήτηση</string>
     <string name="search_by_id">Αναζητήστε με βάση το id</string>
+    <string name="id_not_found">Δεν βρέθηκε σημείωση με αυτό το id</string>
+    <string name="refreshed">Ανανεώθηκε</string>
 </resources>

@@ -1,3 +1,3 @@
 package com.android.kotlincrud.models
 
-data class Note(val id: Int, val title: String )
+data class Note(var id: Int, var title: String )

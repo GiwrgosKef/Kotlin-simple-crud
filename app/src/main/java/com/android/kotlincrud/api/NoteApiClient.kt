@@ -23,8 +23,8 @@ interface NoteApiClient {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://private-9aad-note10.apiary-mock.com/")
-                //.baseUrl("http://10.0.2.2:3000/")
+                //.baseUrl("https://private-9aad-note10.apiary-mock.com/")
+                .baseUrl("http://10.0.2.2:3000/")
                 .build()
 
             return retrofit.create(NoteApiClient::class.java)

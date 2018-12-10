@@ -17,7 +17,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class NoteAdapter (val context: Context) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter (private val context: Context) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     private val client by lazy { NoteApiClient.create() }
     private var notes: ArrayList<Note> = ArrayList()
@@ -35,9 +35,9 @@ class NoteAdapter (val context: Context) : RecyclerView.Adapter<NoteAdapter.Note
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        val id_text : String = notes[position].id.toString() + ")"
-        holder.view.note_id.text = id_text
-        holder.view.name.text = notes[position].title
+        val idText : String = notes[position].id.toString() + ")"
+        holder.view.note_id.text = idText
+        holder.view.title.text = notes[position].title
         holder.view.btnDelete.setOnClickListener { showDeleteDialog(holder, notes[position]) }
         holder.view.btnEdit.setOnClickListener { showUpdateDialog(holder, notes[position]) }
     }
@@ -65,8 +65,9 @@ class NoteAdapter (val context: Context) : RecyclerView.Adapter<NoteAdapter.Note
             .subscribe({  result ->
                 notes.clear()
                 notes.add(result)
-                notifyDataSetChanged() }, { throwable ->
-                Toasty.warning(context, "Note with this id not found", Toast.LENGTH_LONG).show()
+                notifyDataSetChanged() }, {
+                Toasty.error(context, context.getString(R.string.id_not_found), Toast.LENGTH_LONG).show()
+                refreshNotes()
             })
     }
 
@@ -110,10 +111,10 @@ class NoteAdapter (val context: Context) : RecyclerView.Adapter<NoteAdapter.Note
         dialogBuilder.setView(input)
 
         dialogBuilder.setTitle(R.string.update_note)
-        dialogBuilder.setPositiveButton(R.string.update) { dialog, whichButton ->
+        dialogBuilder.setPositiveButton(R.string.update) { _, _ ->
             updateNote(Note(note.id,input.text.toString()))
         }
-        dialogBuilder.setNegativeButton(R.string.cancel) { dialog, whichButton ->
+        dialogBuilder.setNegativeButton(R.string.cancel) { dialog, _ ->
             dialog.cancel()
         }
         val b = dialogBuilder.create()
@@ -124,10 +125,10 @@ class NoteAdapter (val context: Context) : RecyclerView.Adapter<NoteAdapter.Note
         val dialogBuilder = AlertDialog.Builder(holder.view.context)
         dialogBuilder.setTitle(R.string.delete)
         dialogBuilder.setMessage(R.string.delete_conf)
-        dialogBuilder.setPositiveButton(R.string.delete) { dialog, whichButton ->
+        dialogBuilder.setPositiveButton(R.string.delete) { _, _ ->
             deleteNote(note)
         }
-        dialogBuilder.setNegativeButton(R.string.cancel) { dialog, whichButton ->
+        dialogBuilder.setNegativeButton(R.string.cancel) { dialog, _ ->
             dialog.cancel()
         }
         val b = dialogBuilder.create()
